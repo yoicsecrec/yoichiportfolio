@@ -3,155 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YOICHI — Storyboard Artist</title>
+    <title>Serdar / Portfolio & Works</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            background-color: #0d0d0d;
-            color: #ffffff;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.5;
-        }
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 30px 50px;
-            border-bottom: 1px solid #222;
-        }
-        nav div p {
-            font-weight: bold;
-            letter-spacing: 2px;
-        }
-        nav div div {
-            display: flex;
-            gap: 30px;
-        }
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 14px;
-            letter-spacing: 1px;
-        }
-        section {
-            padding: 80px 50px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .hero {
-            text-align: center;
-            padding: 120px 20px;
-        }
-        .hero h1 {
-            font-size: 4rem;
-            margin: 20px 0;
-            letter-spacing: -1px;
-        }
-        .hero p {
-            color: #888;
-            font-size: 1.2rem;
-        }
-        .btn {
-            display: inline-block;
-            margin-top: 40px;
-            padding: 15px 30px;
-            background: #fff;
-            color: #000;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 4px;
-        }
-        .section-title {
-            color: #666;
-            font-size: 0.9rem;
-            letter-spacing: 2px;
-            margin-bottom: 20px;
-        }
-        .project-card {
-            background: #161616;
-            border: 1px solid #222;
-            border-radius: 8px;
-            padding: 40px;
-            margin-bottom: 40px;
-        }
-        .project-card h2 {
-            font-size: 2rem;
-            margin-bottom: 15px;
-        }
-        .project-card p {
-            color: #aaa;
-            margin-bottom: 20px;
-        }
-        .video-container {
-            position: relative;
-            width: 100%;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-            height: 0;
-            margin-bottom: 25px;
-            border-radius: 4px;
-            overflow: hidden;
-            background: #000;
-        }
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
+        :root {
+            --bg-color: #0a0a0c;
+            --card-bg: #131318;
+            --accent-color: #00ffcc;
+            --accent-glow: rgba(0, 255, 204, 0.2);
+            --text-main: #f0f0f5;
+            --text-muted: #9494a0;
+            --border-color: rgba(255, 255, 255, 0.08);
         }
 
-        /* 3'lü Manga Grid Düzeni (Yan Yana) */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        header {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            background: radial-gradient(circle at center, #181824 0%, var(--bg-color) 70%);
+        }
+
+        header h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 700;
+            letter-spacing: -2px;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ffffff 30%, var(--accent-color) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        header p {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            color: var(--text-muted);
+            max-width: 600px;
+            margin-bottom: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 1rem;
+            letter-spacing: -1px;
+        }
+
+        .project-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-bottom: 4rem;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .project-card:hover {
+            border-color: rgba(0, 255, 204, 0.4);
+        }
+
+        .project-header {
+            margin-bottom: 2rem;
+        }
+
+        .project-header h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .project-header p {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        /* Manga 3'lü Özel Yan Yana Düzen */
         .manga-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin-top: 25px;
+            gap: 1.5rem;
         }
+
         .manga-grid img {
             width: 100%;
             height: auto;
-            border-radius: 4px;
-            border: 1px solid #222;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
             transition: transform 0.3s ease;
         }
+
         .manga-grid img:hover {
             transform: scale(1.02);
         }
 
-        /* 14 Sayfalık Silent Storyboard Grid Düzeni */
+        /* 14 Sayfalık Storyboard Grid Düzeni */
         .storyboard-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 20px;
-            margin-top: 25px;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 1.5rem;
         }
+
         .storyboard-grid img {
             width: 100%;
             height: auto;
-            border-radius: 4px;
-            border: 1px solid #222;
-            transition: transform 0.3s ease, border-color 0.3s ease;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+
         .storyboard-grid img:hover {
-            transform: translateY(-4px);
-            border-color: #555;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px var(--accent-glow);
+            border-color: var(--accent-color);
         }
 
         footer {
-            padding: 80px 50px;
-            border-top: 1px solid #222;
             text-align: center;
-            color: #888;
-        }
-        footer h2 {
-            color: #fff;
-            margin: 20px 0;
-            font-size: 2.5rem;
+            padding: 4rem 2rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border-color);
         }
 
         @media (max-width: 768px) {
@@ -159,150 +158,65 @@
                 grid-template-columns: 1fr;
             }
             .storyboard-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
             }
-            section {
-                padding: 40px 20px;
-            }
-            nav {
-                padding: 20px;
+            .project-card {
+                padding: 1.5rem;
             }
         }
     </style>
 </head>
 <body>
 
-    <nav>
-        <div><p>YOICHI</p></div>
-        <div>
-            <div><a href="#work">WORK</a></div>
-            <div><a href="#about">ABOUT</a></div>
-            <div><a href="#contact">CONTACT</a></div>
+    <header>
+        <h1>SERDAR</h1>
+        <p>Storyboard Artist & Comic Creator Portfolio</p>
+    </header>
+
+    <div class="container">
+        <h2 class="section-title">Featured Works</h2>
+
+        <!-- MANGA SECTION (3 Sayfa Yan Yana) -->
+        <div class="project-card">
+            <div class="project-header">
+                <h2>Manga Pages / Comic Project</h2>
+                <p>Sequential art showcasing panel flow, composition, and ink work.</p>
+            </div>
+            <div class="manga-grid">
+                <img src="manga1.jpg" alt="Manga Page 1">
+                <img src="manga2.jpg" alt="Manga Page 2">
+                <img src="manga3.jpg" alt="Manga Page 3">
+            </div>
         </div>
-    </nav>
 
-    <section class="hero">
-        <p>STORYBOARD ARTIST</p>
-        <h1>YOICHI</h1>
-        <p>Visual Storytelling / Animatic / Camera</p>
-        <p style="margin-top: 20px;">Storyboarding through camera, movement and acting.</p>
-        <a href="#work" class="btn">VIEW PORTFOLIO</a>
-    </section>
-
-    <section id="work">
-        <p class="section-title">01 / PRACTICE</p>
-        <p style="font-size: 1.2rem; color: #ccc;">Storyboard artist focused on visual storytelling, camera language, action, acting, and cinematic staging.</p>
-        <p style="color: #666; margin-top: 15px; font-size: 0.9rem;">TOOLS — STORYBOARDER / CLIP STUDIO PAINT / KRITA / BLENDER / DAVINCI RESOLVE</p>
-    </section>
-
-    <main>
-        <section>
-            <p class="section-title">02 / SELECTED WORK</p>
-
-            <!-- Project 1 -->
-            <div class="project-card">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/ieiZl8u1DtQ" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                <p>PROJECT 01</p>
-                <h2>DIALOGUE ANIMATIC</h2>
-                <p><strong>STORYBOARD / ANIMATIC</strong></p>
-                <p>An acting-forward two-character bedroom scene that concentrates on expression, reactions, staging, dialogue rhythm, and motivated camera choices.</p>
-                <p style="font-size: 0.85rem; color: #777;">ROLE — Storyboard Artist / Animator<br>PROCESS — Beat analysis, acting passes, composition, timing<br>CAMERA — Shot size, eyelines, reaction holds, and emotional emphasis<br>SOFTWARE — Storyboarder, Clip Studio Paint, DaVinci Resolve</p>
+        <!-- SILENT DRAMA STORYBOARD SECTION (14 Sayfa) -->
+        <div class="project-card">
+            <div class="project-header">
+                <h2>Silent Drama Storyboard</h2>
+                <p>A 14-page sequential storyboard focused entirely on visual storytelling, framing, and emotion without dialogue.</p>
             </div>
-
-            <!-- Project 2 -->
-            <div class="project-card">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/9b2q1yJ4v94" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                <p>PROJECT 02</p>
-                <h2>ACTION ANIMATIC (FULL)</h2>
-                <p><strong>STORYBOARD / ANIMATIC</strong></p>
-                <p>A full finished action/thriller sequence built around readable camera language, escalation, and spatial clarity across hand-to-hand combat, gunfire, and pursuit.</p>
-                <p style="font-size: 0.85rem; color: #777;">ROLE — Storyboard Artist / Animator<br>PROCESS — Concept, staging, environment, character movement, edit and timing<br>CAMERA — Tracking, impact beats, screen direction, and clean geography<br>SOFTWARE — Storyboarder, Clip Studio Paint, Blender, DaVinci Resolve</p>
+            <div class="storyboard-grid">
+                <img src="0001.png" alt="Storyboard Page 1">
+                <img src="0002.png" alt="Storyboard Page 2">
+                <img src="0003.png" alt="Storyboard Page 3">
+                <img src="0004.png" alt="Storyboard Page 4">
+                <img src="0005.png" alt="Storyboard Page 5">
+                <img src="0006.png" alt="Storyboard Page 6">
+                <img src="0007.png" alt="Storyboard Page 7">
+                <img src="0008.png" alt="Storyboard Page 8">
+                <img src="0009.png" alt="Storyboard Page 9">
+                <img src="0010.png" alt="Storyboard Page 10">
+                <img src="0011.png" alt="Storyboard Page 11">
+                <img src="0012.png" alt="Storyboard Page 12">
+                <img src="0013.png" alt="Storyboard Page 13">
+                <img src="0014.png" alt="Storyboard Page 14">
             </div>
+        </div>
 
-            <!-- Project 3 -->
-            <div class="project-card">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/M7VOglnAegw" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                <p>PROJECT 03</p>
-                <h2>CHASING SEQUENCE</h2>
-                <p><strong>STORYBOARD / ANIMATIC</strong></p>
-                <p>The first split segment of the action animatic focusing on high-speed motion, spatial geography, and dynamic tracking shots.</p>
-                <p style="font-size: 0.85rem; color: #777;">ROLE — Storyboard Artist / Animator<br>PROCESS — Pacing, camera framing, movement tracking<br>CAMERA — Speed, flow, tracking momentum<br>SOFTWARE — Storyboarder, Clip Studio Paint, DaVinci Resolve</p>
-            </div>
+    </div>
 
-            <!-- Project 4 -->
-            <div class="project-card">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/goifU2V1VK8" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                <p>PROJECT 04</p>
-                <h2>FIGHT SEQUENCE</h2>
-                <p><strong>STORYBOARD / ANIMATIC</strong></p>
-                <p>Intense hand-to-hand combat segment following the chase, focusing on impact staging, readability, and close-quarters choreography.</p>
-                <p style="font-size: 0.85rem; color: #777;">ROLE — Storyboard Artist / Animator<br>PROCESS — Choreography breakdown, timing, hit beats<br>CAMERA — Shaking, angles, spatial clarity in combat<br>SOFTWARE — Storyboarder, Clip Studio Paint, DaVinci Resolve</p>
-            </div>
-
-            <!-- Project 5 -->
-            <div class="project-card">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/S2yZhuAxGLc" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                <p>PROJECT 05</p>
-                <h2>FIREARM & FINALE</h2>
-                <p><strong>STORYBOARD / ANIMATIC</strong></p>
-                <p>Concluding sequence featuring high-stakes tactical firearm action and resolution following the intense physical fight.</p>
-                <p style="font-size: 0.85rem; color: #777;">ROLE — Storyboard Artist / Animator<br>PROCESS — Tension building, final edit timing, wrap-up staging<br>CAMERA — Climax angles, reaction holds, resolution framing<br>SOFTWARE — Storyboarder, Clip Studio Paint, DaVinci Resolve</p>
-            </div>
-
-            <!-- Project 6: Silent Storyboard (14 Sayfa PNG) -->
-            <div class="project-card">
-                <p>PROJECT 06</p>
-                <h2>SILENT STORYBOARD</h2>
-                <p>A 14-page silent sequence focused on visual cause-and-effect, camera staging, rhythm, and readable storytelling without dialogue.</p>
-                <div class="storyboard-grid">
-                    <img src="images/0001.png" alt="Storyboard Page 1">
-                    <img src="images/0002.png" alt="Storyboard Page 2">
-                    <img src="images/0003.png" alt="Storyboard Page 3">
-                    <img src="images/0004.png" alt="Storyboard Page 4">
-                    <img src="images/0005.png" alt="Storyboard Page 5">
-                    <img src="images/0006.png" alt="Storyboard Page 6">
-                    <img src="images/0007.png" alt="Storyboard Page 7">
-                    <img src="images/0008.png" alt="Storyboard Page 8">
-                    <img src="images/0009.png" alt="Storyboard Page 9">
-                    <img src="images/0010.png" alt="Storyboard Page 10">
-                    <img src="images/0011.png" alt="Storyboard Page 11">
-                    <img src="images/0012.png" alt="Storyboard Page 12">
-                    <img src="images/0013.png" alt="Storyboard Page 13">
-                    <img src="images/0014.png" alt="Storyboard Page 14">
-                </div>
-            </div>
-
-            <!-- Project 7: Kiss N Destroy (3 Sayfa Manga JPG Yan Yana) -->
-            <div class="project-card">
-                <p>PROJECT 07</p>
-                <h2>KISS N DESTROY</h2>
-                <p>A completed grayscale manga project that demonstrates sustained pacing, visual continuity, and long-form sequential storytelling.</p>
-                <div class="manga-grid">
-                    <img src="images/manga1.jpg" alt="Manga Page 1">
-                    <img src="images/manga2.jpg" alt="Manga Page 2">
-                    <img src="images/manga3.jpg" alt="Manga Page 3">
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer id="contact">
-        <p>AVAILABLE FOR STORYBOARD & ANIMATIC WORK</p>
-        <h2>Let’s make the next sequence read.</h2>
-        <p style="margin-top: 20px;">
-            EMAIL: senin@eposta.com<br>
-            LINKEDIN: linkedin.com/in/kullaniciadiniz
-        </p>
+    <footer>
+        <p>&copy; 2026 Serdar. All rights reserved.</p>
     </footer>
 
 </body>
