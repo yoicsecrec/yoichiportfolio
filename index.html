@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YOICHI — Storyboard Artist</title>
     <link rel="icon" type="image/png" href="favicon.png">
+
     <style>
         * {
             margin: 0;
@@ -136,10 +137,116 @@
             border: 1px solid #222;
             object-fit: cover;
             transition: transform 0.3s ease;
+            cursor: pointer;
         }
 
         .image-grid img:hover {
             transform: scale(1.02);
+        }
+
+        /* =========================================
+           IMAGE LIGHTBOX
+           ========================================= */
+
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.94);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 50px;
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: opacity 0.2s ease, visibility 0.2s ease;
+        }
+
+        .lightbox.active {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+
+        .lightbox-image {
+            display: block;
+            max-width: calc(100vw - 160px);
+            max-height: calc(100vh - 100px);
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            border-radius: 3px;
+            user-select: none;
+            -webkit-user-drag: none;
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            width: 45px;
+            height: 45px;
+            border: none;
+            background: transparent;
+            color: #fff;
+            font-size: 36px;
+            font-weight: 300;
+            line-height: 1;
+            cursor: pointer;
+            z-index: 10001;
+            transition: opacity 0.2s ease;
+        }
+
+        .lightbox-close:hover {
+            opacity: 0.6;
+        }
+
+        .lightbox-prev,
+        .lightbox-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 55px;
+            height: 70px;
+            border: none;
+            background: rgba(0, 0, 0, 0.35);
+            color: #fff;
+            font-size: 42px;
+            font-weight: 300;
+            line-height: 1;
+            cursor: pointer;
+            z-index: 10001;
+            border-radius: 4px;
+            transition: background 0.2s ease, opacity 0.2s ease;
+        }
+
+        .lightbox-prev:hover,
+        .lightbox-next:hover {
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .lightbox-prev {
+            left: 20px;
+        }
+
+        .lightbox-next {
+            right: 20px;
+        }
+
+        .lightbox-counter {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #aaa;
+            font-size: 13px;
+            letter-spacing: 1px;
+            z-index: 10001;
+            user-select: none;
         }
 
         footer {
@@ -220,9 +327,49 @@
             footer h2 {
                 font-size: 2rem;
             }
+
+            /* Mobile Lightbox */
+            .lightbox {
+                padding: 20px;
+            }
+
+            .lightbox-image {
+                max-width: calc(100vw - 40px);
+                max-height: calc(100vh - 100px);
+            }
+
+            .lightbox-close {
+                top: 12px;
+                right: 14px;
+                font-size: 32px;
+                width: 40px;
+                height: 40px;
+            }
+
+            .lightbox-prev,
+            .lightbox-next {
+                width: 42px;
+                height: 55px;
+                font-size: 30px;
+                background: rgba(0, 0, 0, 0.5);
+            }
+
+            .lightbox-prev {
+                left: 8px;
+            }
+
+            .lightbox-next {
+                right: 8px;
+            }
+
+            .lightbox-counter {
+                bottom: 12px;
+                font-size: 11px;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <nav>
@@ -376,7 +523,7 @@
                 <p>
                     This was the most intensive storyboard project I had worked on at the time. I spent a lot of time refining the shots, camera angles, staging, and continuity. It had a big impact on how I approach storyboarding now.
                 </p>
-                
+
                 <div class="image-grid">
                     <img src="0001.png" alt="Storyboard Frame 1">
                     <img src="0002.png" alt="Storyboard Frame 2">
@@ -433,7 +580,7 @@
                         Webtoon
                     </a>
                 </p>
-                
+
                 <div class="image-grid">
                     <img src="manga1.jpg" alt="Kiss n Destroy Manga Panel 1">
                     <img src="manga2.jpg" alt="Kiss n Destroy Manga Panel 2">
@@ -452,6 +599,251 @@
             LINKEDIN: <a href="https://www.linkedin.com/in/yoichi-rec-656601408/" target="_blank" style="color: #fff;">linkedin.com/in/yoichi-rec-656601408</a>
         </p>
     </footer>
+
+
+    <!-- =========================================
+         IMAGE LIGHTBOX
+         ========================================= -->
+
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+
+        <button
+            class="lightbox-close"
+            id="lightboxClose"
+            aria-label="Close image"
+            type="button"
+        >
+            &times;
+        </button>
+
+        <button
+            class="lightbox-prev"
+            id="lightboxPrev"
+            aria-label="Previous image"
+            type="button"
+        >
+            &#8249;
+        </button>
+
+        <img
+            class="lightbox-image"
+            id="lightboxImage"
+            src=""
+            alt=""
+        >
+
+        <button
+            class="lightbox-next"
+            id="lightboxNext"
+            aria-label="Next image"
+            type="button"
+        >
+            &#8250;
+        </button>
+
+        <div class="lightbox-counter" id="lightboxCounter"></div>
+    </div>
+
+
+    <script>
+        /* =========================================
+           IMAGE LIGHTBOX SCRIPT
+           ========================================= */
+
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImage = document.getElementById("lightboxImage");
+        const lightboxClose = document.getElementById("lightboxClose");
+        const lightboxPrev = document.getElementById("lightboxPrev");
+        const lightboxNext = document.getElementById("lightboxNext");
+        const lightboxCounter = document.getElementById("lightboxCounter");
+
+        const galleries = document.querySelectorAll(".image-grid");
+
+        let currentGallery = [];
+        let currentIndex = 0;
+
+
+        /* Open selected image */
+        function openLightbox(gallery, index) {
+
+            currentGallery = Array.from(
+                gallery.querySelectorAll("img")
+            );
+
+            currentIndex = index;
+
+            updateLightbox();
+
+            lightbox.classList.add("active");
+            lightbox.setAttribute("aria-hidden", "false");
+
+            document.body.style.overflow = "hidden";
+        }
+
+
+        /* Update displayed image */
+        function updateLightbox() {
+
+            if (!currentGallery.length) return;
+
+            const image = currentGallery[currentIndex];
+
+            lightboxImage.src = image.src;
+            lightboxImage.alt = image.alt;
+
+            lightboxCounter.textContent =
+                `${currentIndex + 1} / ${currentGallery.length}`;
+
+            /*
+             * Hide navigation buttons when there is
+             * only one image in the gallery.
+             */
+            if (currentGallery.length <= 1) {
+                lightboxPrev.style.display = "none";
+                lightboxNext.style.display = "none";
+                lightboxCounter.style.display = "none";
+            } else {
+                lightboxPrev.style.display = "block";
+                lightboxNext.style.display = "block";
+                lightboxCounter.style.display = "block";
+            }
+        }
+
+
+        /* Close lightbox */
+        function closeLightbox() {
+
+            lightbox.classList.remove("active");
+            lightbox.setAttribute("aria-hidden", "true");
+
+            document.body.style.overflow = "";
+
+            /*
+             * Clear image after closing.
+             */
+            setTimeout(() => {
+                if (!lightbox.classList.contains("active")) {
+                    lightboxImage.src = "";
+                    lightboxImage.alt = "";
+                }
+            }, 200);
+        }
+
+
+        /* Previous image */
+        function showPrevious() {
+
+            if (!currentGallery.length) return;
+
+            currentIndex--;
+
+            if (currentIndex < 0) {
+                currentIndex = currentGallery.length - 1;
+            }
+
+            updateLightbox();
+        }
+
+
+        /* Next image */
+        function showNext() {
+
+            if (!currentGallery.length) return;
+
+            currentIndex++;
+
+            if (currentIndex >= currentGallery.length) {
+                currentIndex = 0;
+            }
+
+            updateLightbox();
+        }
+
+
+        /*
+         * Add click events to all portfolio images.
+         */
+        galleries.forEach(gallery => {
+
+            const images = gallery.querySelectorAll("img");
+
+            images.forEach((image, index) => {
+
+                image.addEventListener("click", () => {
+                    openLightbox(gallery, index);
+                });
+
+            });
+
+        });
+
+
+        /*
+         * Close button
+         */
+        lightboxClose.addEventListener("click", (event) => {
+            event.stopPropagation();
+            closeLightbox();
+        });
+
+
+        /*
+         * Previous button
+         */
+        lightboxPrev.addEventListener("click", (event) => {
+            event.stopPropagation();
+            showPrevious();
+        });
+
+
+        /*
+         * Next button
+         */
+        lightboxNext.addEventListener("click", (event) => {
+            event.stopPropagation();
+            showNext();
+        });
+
+
+        /*
+         * Clicking the dark background closes the lightbox.
+         *
+         * Clicking the image itself does NOT close it.
+         */
+        lightbox.addEventListener("click", (event) => {
+
+            if (event.target === lightbox) {
+                closeLightbox();
+            }
+
+        });
+
+
+        /*
+         * ESC = close
+         * LEFT ARROW = previous
+         * RIGHT ARROW = next
+         */
+        document.addEventListener("keydown", (event) => {
+
+            if (!lightbox.classList.contains("active")) {
+                return;
+            }
+
+            if (event.key === "Escape") {
+                closeLightbox();
+            }
+
+            if (event.key === "ArrowLeft") {
+                showPrevious();
+            }
+
+            if (event.key === "ArrowRight") {
+                showNext();
+            }
+
+        });
+    </script>
 
 </body>
 </html>
