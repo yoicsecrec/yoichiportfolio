@@ -86,16 +86,23 @@
             color: #aaa;
             margin-bottom: 20px;
         }
-        .video-placeholder {
+        .video-container {
+            position: relative;
             width: 100%;
-            height: 400px;
-            background: #222;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #666;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            margin-bottom: 25px;
             border-radius: 4px;
-            margin-bottom: 20px;
+            overflow: hidden;
+            background: #000;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
         }
         footer {
             padding: 80px 50px;
@@ -141,54 +148,74 @@
 
             <!-- Project 1 -->
             <div class="project-card">
-                <div class="video-placeholder">Replace with finished video / MP4</div>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/ieiZl8u1DtQ" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
                 <p>PROJECT 01</p>
-                <h2>ACTION ANIMATIC</h2>
-                <p><strong>STORYBOARD / ANIMATIC</strong></p>
-                <p>A finished action/thriller sequence built around readable camera language, escalation, and spatial clarity across hand-to-hand combat, gunfire, pursuit, and supernatural action.</p>
-                <p style="font-size: 0.85rem; color: #777;">ROLE — Storyboard Artist / Animator<br>PROCESS — Concept, staging, environment, character movement, edit and timing<br>CAMERA — Tracking, impact beats, screen direction, and clean geography<br>SOFTWARE — Storyboarder, Clip Studio Paint, Blender, DaVinci Resolve</p>
-            </div>
-
-            <!-- Project 2 -->
-            <div class="project-card">
-                <div class="video-placeholder">Replace with finished video / MP4</div>
-                <p>PROJECT 02</p>
                 <h2>DIALOGUE ANIMATIC</h2>
                 <p><strong>STORYBOARD / ANIMATIC</strong></p>
                 <p>An acting-forward two-character bedroom scene that concentrates on expression, reactions, staging, dialogue rhythm, and motivated camera choices.</p>
                 <p style="font-size: 0.85rem; color: #777;">ROLE — Storyboard Artist / Animator<br>PROCESS — Beat analysis, acting passes, composition, timing<br>CAMERA — Shot size, eyelines, reaction holds, and emotional emphasis<br>SOFTWARE — Storyboarder, Clip Studio Paint, DaVinci Resolve</p>
             </div>
 
+            <!-- Project 2 -->
+            <div class="project-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/9b2q1yJ4v94" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <p>PROJECT 02</p>
+                <h2>ACTION ANIMATIC (FULL)</h2>
+                <p><strong>STORYBOARD / ANIMATIC</strong></p>
+                <p>A full finished action/thriller sequence built around readable camera language, escalation, and spatial clarity across hand-to-hand combat, gunfire, and pursuit.</p>
+                <p style="font-size: 0.85rem; color: #777;">ROLE — Storyboard Artist / Animator<br>PROCESS — Concept, staging, environment, character movement, edit and timing<br>CAMERA — Tracking, impact beats, screen direction, and clean geography<br>SOFTWARE — Storyboarder, Clip Studio Paint, Blender, DaVinci Resolve</p>
+            </div>
+
             <!-- Project 3 -->
             <div class="project-card">
-                <div class="video-placeholder">Replace with finished video / MP4</div>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/M7VOglnAegw" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
                 <p>PROJECT 03</p>
-                <h2>ANIMATIC 03</h2>
+                <h2>CHASING SEQUENCE</h2>
                 <p><strong>STORYBOARD / ANIMATIC</strong></p>
-                <p>A finished animatic presented as a concise production case study, leaving room for the core visual work while documenting the choices behind it.</p>
-                <p style="font-size: 0.85rem; color: #777;">ROLE — Storyboard Artist / Animator<br>PROCESS — Concept, staging, thumbnails, edit and sound timing<br>CAMERA — Intentional coverage, silhouettes, and readable transitions<br>SOFTWARE — Storyboarder, Clip Studio Paint, DaVinci Resolve</p>
+                <p>The first split segment of the action animatic focusing on high-speed motion, spatial geography, and dynamic tracking shots.</p>
+                <p style="font-size: 0.85rem; color: #777;">ROLE — Storyboard Artist / Animator<br>PROCESS — Pacing, camera framing, movement tracking<br>CAMERA — Speed, flow, tracking momentum<br>SOFTWARE — Storyboarder, Clip Studio Paint, DaVinci Resolve</p>
             </div>
 
             <!-- Project 4 -->
             <div class="project-card">
-                <div class="video-placeholder">Replace with finished video / MP4</div>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/goifU2V1VK8" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
                 <p>PROJECT 04</p>
-                <h2>ANIMATIC 04</h2>
+                <h2>FIGHT SEQUENCE</h2>
                 <p><strong>STORYBOARD / ANIMATIC</strong></p>
-                <p>A fourth completed animatic, framed for fast recruiter review with an immediately visible film and a compact account of the process.</p>
-                <p style="font-size: 0.85rem; color: #777;">ROLE — Storyboard Artist / Animator<br>PROCESS — Visual development, staging, timing, and edit refinement<br>CAMERA — Clarity of action, emotional intention, and progression<br>SOFTWARE — Storyboarder, Clip Studio Paint, DaVinci Resolve</p>
+                <p>Intense hand-to-hand combat segment following the chase, focusing on impact staging, readability, and close-quarters choreography.</p>
+                <p style="font-size: 0.85rem; color: #777;">ROLE — Storyboard Artist / Animator<br>PROCESS — Choreography breakdown, timing, hit beats<br>CAMERA — Shaking, angles, spatial clarity in combat<br>SOFTWARE — Storyboarder, Clip Studio Paint, DaVinci Resolve</p>
             </div>
 
             <!-- Project 5 -->
             <div class="project-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/S2yZhuAxGLc" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
                 <p>PROJECT 05</p>
-                <h2>SILENT STORYBOARD</h2>
-                <p>A 14-page silent sequence focused on visual cause-and-effect, camera staging, rhythm, and readable storytelling without dialogue.</p>
+                <h2>FIREARM & FINALE</h2>
+                <p><strong>STORYBOARD / ANIMATIC</strong></p>
+                <p>Concluding sequence featuring high-stakes tactical firearm action and resolution following the intense physical fight.</p>
+                <p style="font-size: 0.85rem; color: #777;">ROLE — Storyboard Artist / Animator<br>PROCESS — Tension building, final edit timing, wrap-up staging<br>CAMERA — Climax angles, reaction holds, resolution framing<br>SOFTWARE — Storyboarder, Clip Studio Paint, DaVinci Resolve</p>
             </div>
 
             <!-- Project 6 -->
             <div class="project-card">
                 <p>PROJECT 06</p>
+                <h2>SILENT STORYBOARD</h2>
+                <p>A 14-page silent sequence focused on visual cause-and-effect, camera staging, rhythm, and readable storytelling without dialogue.</p>
+            </div>
+
+            <!-- Project 7 -->
+            <div class="project-card">
+                <p>PROJECT 07</p>
                 <h2>KISS N DESTROY</h2>
                 <p>A completed grayscale manga project that demonstrates sustained pacing, visual continuity, and long-form sequential storytelling.</p>
             </div>
