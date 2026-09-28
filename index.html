@@ -11,12 +11,14 @@
             padding: 0;
             box-sizing: border-box;
         }
+
         body {
             background-color: #0d0d0d;
             color: #ffffff;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.5;
         }
+
         nav {
             display: flex;
             justify-content: space-between;
@@ -24,38 +26,46 @@
             padding: 30px 50px;
             border-bottom: 1px solid #222;
         }
+
         nav div p {
             font-weight: bold;
             letter-spacing: 2px;
         }
+
         nav div div {
             display: flex;
             gap: 30px;
         }
+
         nav a {
             color: #fff;
             text-decoration: none;
             font-size: 14px;
             letter-spacing: 1px;
         }
+
         section {
             padding: 80px 50px;
             max-width: 1200px;
             margin: 0 auto;
         }
+
         .hero {
             text-align: center;
             padding: 120px 20px;
         }
+
         .hero h1 {
             font-size: 4rem;
             margin: 20px 0;
             letter-spacing: -1px;
         }
+
         .hero p {
             color: #888;
             font-size: 1.2rem;
         }
+
         .btn {
             display: inline-block;
             margin-top: 40px;
@@ -66,12 +76,14 @@
             font-weight: bold;
             border-radius: 4px;
         }
+
         .section-title {
             color: #666;
             font-size: 0.9rem;
             letter-spacing: 2px;
             margin-bottom: 20px;
         }
+
         .project-card {
             background: #161616;
             border: 1px solid #222;
@@ -79,24 +91,28 @@
             padding: 40px;
             margin-bottom: 40px;
         }
+
         .project-card h2 {
             font-size: 2rem;
             margin-bottom: 15px;
         }
+
         .project-card p {
             color: #aaa;
             margin-bottom: 20px;
         }
+
         .video-container {
             position: relative;
             width: 100%;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            padding-bottom: 56.25%;
             height: 0;
             margin-bottom: 25px;
             border-radius: 4px;
             overflow: hidden;
             background: #000;
         }
+
         .video-container iframe {
             position: absolute;
             top: 0;
@@ -105,12 +121,14 @@
             height: 100%;
             border: 0;
         }
+
         .image-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 15px;
             margin-bottom: 25px;
         }
+
         .image-grid img {
             width: 100%;
             height: auto;
@@ -119,15 +137,18 @@
             object-fit: cover;
             transition: transform 0.3s ease;
         }
+
         .image-grid img:hover {
             transform: scale(1.02);
         }
+
         footer {
             padding: 80px 50px;
             border-top: 1px solid #222;
             text-align: center;
             color: #888;
         }
+
         footer h2 {
             color: #fff;
             margin: 20px 0;
@@ -136,12 +157,13 @@
 
         /* Mobile */
         @media (max-width: 700px) {
+
             nav {
-                padding: 22px 20px;
+                padding: 22px 18px;
             }
 
             nav div div {
-                gap: 16px;
+                gap: 14px;
             }
 
             nav a {
@@ -149,7 +171,7 @@
             }
 
             section {
-                padding: 55px 15px;
+                padding: 55px 10px;
             }
 
             .hero {
@@ -165,7 +187,7 @@
             }
 
             .project-card {
-                padding: 20px 15px;
+                padding: 18px 10px;
                 margin-bottom: 30px;
             }
 
@@ -179,10 +201,11 @@
             }
 
             .video-container {
+                width: 100%;
                 margin-left: 0;
                 margin-right: 0;
-                width: 100%;
                 margin-bottom: 22px;
+                border-radius: 3px;
             }
 
             .image-grid {
@@ -234,6 +257,7 @@
                 <div class="video-container">
                     <iframe src="https://www.youtube.com/embed/ieiZl8u1DtQ" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
+
                 <p>PROJECT 01</p>
                 <h2>DIALOGUE ANIMATIC</h2>
 
@@ -246,7 +270,7 @@
                 </p>
 
                 <p>
-                    The sequence was built using Storyboarder, Blender, and Clip Studio Paint, with the focus on staging the dialogue, character reactions, timing, and the progression of the scene.
+                    The sequence was built using Storyboarder, Blender, and Clip Studio Paint. I focused on staging the dialogue, character reactions, timing, and the way the scene develops from beginning to end.
                 </p>
             </div>
 
@@ -255,11 +279,12 @@
                 <div class="video-container">
                     <iframe src="https://www.youtube.com/embed/9b2q1yJ4v94" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
+
                 <p>PROJECT 02</p>
                 <h2>ACTION ANIMATIC (FULL)</h2>
 
                 <p>
-                    I built the environments using simplified 3D references, adapting them into storyboard backgrounds while keeping the focus on camera placement, character movement, and readable action.
+                    I built the environments using simplified 3D references and adapted them into storyboard backgrounds. The main focus was on camera placement, character movement, and keeping the action easy to follow.
                 </p>
 
                 <p>
@@ -267,11 +292,11 @@
                 </p>
 
                 <p>
-                    In the earlier version of the club scene, the drunk girl interrupted the agent while he was trying to follow the target. I changed the sequence because I wanted to preserve the quieter mood and rhythm of the chase before moving into the fight.
+                    In the earlier version of the club scene, the drunk girl interrupted the agent while he was trying to follow the target. I changed this because I wanted to keep the quieter mood and rhythm of the chase before moving into the fight.
                 </p>
 
                 <p>
-                    I decided to keep the animatic silent rather than use artificial dialogue, sound effects, or music that did not fit the scene. This allowed the focus to remain on the visual pacing, camera movement, staging, and action itself.
+                    I decided to keep the animatic silent rather than use dialogue, sound effects, or music that did not fit the scene. This kept the focus on the visual pacing, camera movement, staging, and action.
                 </p>
 
                 <p>
@@ -284,11 +309,14 @@
                 <div class="video-container">
                     <iframe src="https://www.youtube.com/embed/M7VOglnAegw" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
+
                 <p>PROJECT 03</p>
                 <h2>CHASING SEQUENCE</h2>
+
                 <p><strong>STORYBOARD / ANIMATIC</strong></p>
+
                 <p>
-                    The first split segment of the action animatic, focusing on the pursuit through the environment. I developed the sequence around high-speed movement, spatial geography, and dynamic tracking shots while keeping the route and screen direction readable.
+                    The first split segment of the action animatic, focusing on the pursuit through the environment. I developed the sequence around fast movement, spatial geography, and tracking shots while keeping the route and screen direction clear.
                 </p>
             </div>
 
@@ -297,11 +325,14 @@
                 <div class="video-container">
                     <iframe src="https://www.youtube.com/embed/goifU2V1VK8" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
+
                 <p>PROJECT 04</p>
                 <h2>FIGHT SEQUENCE</h2>
+
                 <p><strong>STORYBOARD / ANIMATIC</strong></p>
+
                 <p>
-                    The hand-to-hand combat segment following the chase, focusing on impact staging, readable choreography, and close-quarters action. The shots were developed around clear movement, hit beats, and spatial relationships between the characters.
+                    The hand-to-hand combat segment following the chase, focusing on impact, clear choreography, and close-quarters action. I built the shots around clear movement, hit beats, and the positions of the characters during the fight.
                 </p>
             </div>
 
@@ -310,11 +341,14 @@
                 <div class="video-container">
                     <iframe src="https://www.youtube.com/embed/S2yZhuAxGLc" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
+
                 <p>PROJECT 05</p>
                 <h2>FIREARM & FINALE</h2>
+
                 <p><strong>STORYBOARD / ANIMATIC</strong></p>
+
                 <p>
-                    The concluding section of the action sequence, moving from the physical fight into a firearm confrontation and final resolution. The focus was on building tension toward the climax, controlling the final edit, and making the transition into the ending clear.
+                    The final section of the action sequence, moving from the physical fight into a firearm confrontation and final resolution. I focused on building tension toward the climax, controlling the final timing, and making the transition into the ending clear.
                 </p>
             </div>
 
@@ -322,6 +356,7 @@
             <div class="project-card">
                 <p>PROJECT 06</p>
                 <h2>SILENT STORYBOARD</h2>
+
                 <p>
                     A 14-page silent sequence focused on visual cause-and-effect, camera staging, rhythm, and readable storytelling without dialogue.
                 </p>
@@ -339,7 +374,7 @@
                 </p>
 
                 <p>
-                    This project had a major impact on how I approach storyboarding. It pushed me to think more carefully about camera angles, visual staging, continuity, and how much information can be communicated through a single shot.
+                    This was the most intensive storyboard project I had worked on at the time. I spent a lot of time refining the shots, camera angles, staging, and continuity. It had a big impact on how I approach storyboarding now.
                 </p>
                 
                 <div class="image-grid">
@@ -364,6 +399,7 @@
             <div class="project-card">
                 <p>PROJECT 07</p>
                 <h2>KISS N DESTROY</h2>
+
                 <p>
                     A completed grayscale manga project that demonstrates sustained pacing, visual continuity, and long-form sequential storytelling.
                 </p>
@@ -410,6 +446,7 @@
     <footer id="contact">
         <p>AVAILABLE FOR STORYBOARD & ANIMATIC WORK</p>
         <h2>Let’s make the next sequence read.</h2>
+
         <p style="margin-top: 20px;">
             EMAIL: <a href="mailto:sergeantr838@gmail.com" style="color: #fff;">sergeantr838@gmail.com</a><br>
             LINKEDIN: <a href="https://www.linkedin.com/in/yoichi-rec-656601408/" target="_blank" style="color: #fff;">linkedin.com/in/yoichi-rec-656601408</a>
