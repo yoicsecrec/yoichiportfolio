@@ -1,2 +1,0 @@
-# yoichiportfolio
-my little portfolio :)
