@@ -160,6 +160,30 @@
         }
 
         /* =========================================
+           CHARACTER SHEET
+           ========================================= */
+
+        .character-sheet {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto 25px;
+        }
+
+        .character-sheet img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            border: 1px solid #222;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .character-sheet img:hover {
+            transform: scale(1.01);
+        }
+
+        /* =========================================
            IMAGE LIGHTBOX
            ========================================= */
 
@@ -338,6 +362,17 @@
             .image-grid {
                 grid-template-columns: 1fr;
                 gap: 12px;
+            }
+
+            .character-sheet {
+                width: 100%;
+                max-width: 100%;
+                margin-bottom: 22px;
+            }
+
+            .character-sheet img {
+                width: 100%;
+                height: auto;
             }
 
             footer {
