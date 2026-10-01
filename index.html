@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +11,10 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -77,15 +80,40 @@
             font-size: 1.2rem;
         }
 
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 14px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
         .btn {
             display: inline-block;
-            margin-top: 40px;
             padding: 15px 30px;
             background: #fff;
             color: #000;
             text-decoration: none;
             font-weight: bold;
             border-radius: 4px;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+
+        .btn:hover {
+            opacity: 0.85;
+            transform: translateY(-1px);
+        }
+
+        .btn-about {
+            background: #24202a;
+            color: #c3b6d6;
+            border: 1px solid #40354d;
+        }
+
+        .btn-about:hover {
+            background: #2c2634;
+            color: #d5c9e3;
         }
 
         .section-title {
@@ -182,6 +210,61 @@
 
         .character-sheet img:hover {
             transform: scale(1.01);
+        }
+
+        /* =========================================
+           ABOUT ME
+           ========================================= */
+
+        .about-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 50px 90px;
+        }
+
+        .about-box {
+            position: relative;
+            padding: 55px 50px;
+            border-top: 1px solid rgba(111, 99, 133, 0.35);
+            border-bottom: 1px solid rgba(111, 99, 133, 0.35);
+            background: linear-gradient(
+                180deg,
+                rgba(67, 54, 82, 0.08),
+                rgba(43, 34, 55, 0.03)
+            );
+        }
+
+        .about-label {
+            color: #756584;
+            font-size: 0.85rem;
+            letter-spacing: 3px;
+            margin-bottom: 25px;
+            text-shadow:
+                0 0 6px rgba(117, 101, 132, 0.25),
+                0 0 14px rgba(117, 101, 132, 0.10);
+        }
+
+        .about-name {
+            color: #b5a4c5;
+            font-size: 2rem;
+            font-weight: 500;
+            margin-bottom: 25px;
+            letter-spacing: -0.5px;
+            text-shadow:
+                0 0 7px rgba(181, 164, 197, 0.18),
+                0 0 18px rgba(181, 164, 197, 0.08);
+        }
+
+        .about-text {
+            max-width: 850px;
+            color: #aaa0b1;
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 22px;
+        }
+
+        .about-text:last-child {
+            margin-bottom: 0;
         }
 
         /* =========================================
@@ -333,6 +416,16 @@
                 font-size: 1rem;
             }
 
+            .hero-buttons {
+                gap: 10px;
+                margin-top: 35px;
+            }
+
+            .btn {
+                padding: 13px 20px;
+                font-size: 13px;
+            }
+
             .project-card {
                 padding: 18px 10px;
                 margin-bottom: 30px;
@@ -374,6 +467,29 @@
             .character-sheet img {
                 width: 100%;
                 height: auto;
+            }
+
+            /* Mobile About Me */
+            .about-section {
+                padding: 75px 18px 70px;
+            }
+
+            .about-box {
+                padding: 40px 20px;
+            }
+
+            .about-label {
+                font-size: 0.78rem;
+                letter-spacing: 2.5px;
+            }
+
+            .about-name {
+                font-size: 1.65rem;
+            }
+
+            .about-text {
+                font-size: 0.92rem;
+                line-height: 1.75;
             }
 
             footer {
@@ -430,26 +546,44 @@
 
     <nav>
         <div><p>YOICHI</p></div>
+
         <div>
             <div><a href="#work">WORK</a></div>
-            <div><a href="#about">ABOUT</a></div>
             <div><a href="#contact">CONTACT</a></div>
         </div>
     </nav>
 
     <section class="hero">
         <p>STORYBOARD & PREVIS ARTIST</p>
+
         <h1>YOICHI</h1>
+
         <p>Visual Storytelling / Animatic / Camera</p>
-        <p style="margin-top: 20px;">Visual storytelling through camera, movement, acting, and sequential design.</p>
-        <a href="#work" class="btn">VIEW PORTFOLIO</a>
+
+        <p style="margin-top: 20px;">
+            Visual storytelling through camera, movement, acting, and sequential design.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#work" class="btn">VIEW PORTFOLIO</a>
+            <a href="#about" class="btn btn-about">ABOUT ME</a>
+        </div>
     </section>
 
     <section id="work">
         <p class="section-title">01 / PRACTICE</p>
-        <p style="font-size: 1.2rem; color: #ccc;">Storyboard artist focused on visual storytelling, camera, character movement, action, and scene development.</p>
-        <p style="color: #666; margin-top: 15px; font-size: 0.9rem;">STORYBOARD / ANIMATIC / VISUAL PLANNING / SEQUENTIAL ART</p>
-        <p style="color: #666; margin-top: 10px; font-size: 0.9rem;">TOOLS — STORYBOARDER / CLIP STUDIO PAINT / KRITA / BLENDER / DAVINCI RESOLVE</p>
+
+        <p style="font-size: 1.2rem; color: #ccc;">
+            Storyboard artist focused on visual storytelling, camera, character movement, action, and scene development.
+        </p>
+
+        <p style="color: #666; margin-top: 15px; font-size: 0.9rem;">
+            STORYBOARD / ANIMATIC / VISUAL PLANNING / SEQUENTIAL ART
+        </p>
+
+        <p style="color: #666; margin-top: 10px; font-size: 0.9rem;">
+            TOOLS — STORYBOARDER / CLIP STUDIO PAINT / KRITA / BLENDER / DAVINCI RESOLVE
+        </p>
     </section>
 
     <main>
@@ -556,7 +690,7 @@
                 </p>
             </div>
 
-            <!-- Project 6 (Silent Storyboard - 14 Frames) -->
+            <!-- Project 6 -->
             <div class="project-card">
                 <p>PROJECT 06</p>
                 <h2>SILENT STORYBOARD</h2>
@@ -599,7 +733,7 @@
                 </div>
             </div>
 
-            <!-- Project 7 (Kiss n Destroy - Manga Panels) -->
+            <!-- Project 7 -->
             <div class="project-card">
                 <p>PROJECT 07</p>
                 <h2>KISS N DESTROY</h2>
@@ -645,7 +779,7 @@
                 </div>
             </div>
 
-            <!-- Project 8 (Character Sheet) -->
+            <!-- Project 8 -->
             <div class="project-card">
                 <p>PROJECT 08</p>
                 <h2>CHARACTER SHEET</h2>
@@ -662,14 +796,68 @@
         </section>
     </main>
 
+
+    <!-- =========================================
+         ABOUT ME
+         ========================================= -->
+
+    <section id="about" class="about-section">
+
+        <div class="about-box">
+
+            <p class="about-label">ABOUT ME</p>
+
+            <h2 class="about-name">Yiğit Samet Örs</h2>
+
+            <p class="about-text">
+                I’m a Storyboard & Previs Artist with a strong interest in visual storytelling.
+                I’ve been interested in drawing and visual storytelling since I was a kid,
+                and I’m still exploring it with the same curiosity and excitement.
+            </p>
+
+            <p class="about-text">
+                I enjoy thinking about how a scene should be seen, how characters move and act,
+                and how camera, staging and timing can shape a story. I like turning ideas into
+                storyboards, animatics and cinematic sequences.
+            </p>
+
+            <p class="about-text">
+                I’m currently looking for work and internship opportunities in games, animation,
+                film, commercials and other visual production fields.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         CONTACT
+         ========================================= -->
+
     <footer id="contact">
-        <p>AVAILABLE FOR STORYBOARD, ANIMATIC & VISUAL STORYTELLING WORK</p>
-        <h2>Let’s make the next sequence read.</h2>
+
+        <p>
+            AVAILABLE FOR STORYBOARD, ANIMATIC & VISUAL STORYTELLING WORK
+        </p>
+
+        <h2>
+            Let’s make the next sequence read.
+        </h2>
 
         <p style="margin-top: 20px;">
-            EMAIL: <a href="mailto:sergeantr838@gmail.com" style="color: #fff;">sergeantr838@gmail.com</a><br>
-            LINKEDIN: <a href="https://www.linkedin.com/in/yoichi-rec-656601408/" target="_blank" style="color: #fff;">linkedin.com/in/yoichi-rec-656601408</a>
+            EMAIL:
+            <a href="mailto:sergeantr838@gmail.com" style="color: #fff;">
+                sergeantr838@gmail.com
+            </a>
+            <br>
+
+            LINKEDIN:
+            <a href="https://www.linkedin.com/in/yoichi-rec-656601408/" target="_blank" style="color: #fff;">
+                linkedin.com/in/yoichi-rec-656601408
+            </a>
         </p>
+
     </footer>
 
 
@@ -714,6 +902,7 @@
         </button>
 
         <div class="lightbox-counter" id="lightboxCounter"></div>
+
     </div>
 
 
@@ -729,13 +918,16 @@
         const lightboxNext = document.getElementById("lightboxNext");
         const lightboxCounter = document.getElementById("lightboxCounter");
 
-        const galleries = document.querySelectorAll(".image-grid, .character-sheet");
+        const galleries = document.querySelectorAll(
+            ".image-grid, .character-sheet"
+        );
 
         let currentGallery = [];
         let currentIndex = 0;
 
 
         /* Open selected image */
+
         function openLightbox(gallery, index) {
 
             currentGallery = Array.from(
@@ -754,6 +946,7 @@
 
 
         /* Update displayed image */
+
         function updateLightbox() {
 
             if (!currentGallery.length) return;
@@ -766,23 +959,25 @@
             lightboxCounter.textContent =
                 `${currentIndex + 1} / ${currentGallery.length}`;
 
-            /*
-             * Hide navigation buttons when there is
-             * only one image in the gallery.
-             */
+
             if (currentGallery.length <= 1) {
+
                 lightboxPrev.style.display = "none";
                 lightboxNext.style.display = "none";
                 lightboxCounter.style.display = "none";
+
             } else {
+
                 lightboxPrev.style.display = "block";
                 lightboxNext.style.display = "block";
                 lightboxCounter.style.display = "block";
+
             }
         }
 
 
         /* Close lightbox */
+
         function closeLightbox() {
 
             lightbox.classList.remove("active");
@@ -790,19 +985,21 @@
 
             document.body.style.overflow = "";
 
-            /*
-             * Clear image after closing.
-             */
             setTimeout(() => {
+
                 if (!lightbox.classList.contains("active")) {
+
                     lightboxImage.src = "";
                     lightboxImage.alt = "";
+
                 }
+
             }, 200);
         }
 
 
         /* Previous image */
+
         function showPrevious() {
 
             if (!currentGallery.length) return;
@@ -818,6 +1015,7 @@
 
 
         /* Next image */
+
         function showNext() {
 
             if (!currentGallery.length) return;
@@ -832,9 +1030,8 @@
         }
 
 
-        /*
-         * Add click events to all portfolio images.
-         */
+        /* Add click events to all portfolio images */
+
         galleries.forEach(gallery => {
 
             const images = gallery.querySelectorAll("img");
@@ -842,7 +1039,9 @@
             images.forEach((image, index) => {
 
                 image.addEventListener("click", () => {
+
                     openLightbox(gallery, index);
+
                 });
 
             });
@@ -850,52 +1049,54 @@
         });
 
 
-        /*
-         * Close button
-         */
+        /* Close button */
+
         lightboxClose.addEventListener("click", (event) => {
+
             event.stopPropagation();
+
             closeLightbox();
+
         });
 
 
-        /*
-         * Previous button
-         */
+        /* Previous button */
+
         lightboxPrev.addEventListener("click", (event) => {
+
             event.stopPropagation();
+
             showPrevious();
+
         });
 
 
-        /*
-         * Next button
-         */
+        /* Next button */
+
         lightboxNext.addEventListener("click", (event) => {
+
             event.stopPropagation();
+
             showNext();
+
         });
 
 
-        /*
-         * Clicking the dark background closes the lightbox.
-         *
-         * Clicking the image itself does NOT close it.
-         */
+        /* Clicking the dark background closes the lightbox */
+
         lightbox.addEventListener("click", (event) => {
 
             if (event.target === lightbox) {
+
                 closeLightbox();
+
             }
 
         });
 
 
-        /*
-         * ESC = close
-         * LEFT ARROW = previous
-         * RIGHT ARROW = next
-         */
+        /* Keyboard controls */
+
         document.addEventListener("keydown", (event) => {
 
             if (!lightbox.classList.contains("active")) {
@@ -919,4 +1120,3 @@
 
 </body>
 </html>
-```
