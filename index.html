@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,7 +30,8 @@
                 #100d14 100%
             );
             color: #ffffff;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.5;
         }
 
@@ -188,9 +190,7 @@
             transform: scale(1.02);
         }
 
-        /* =========================================
-           CHARACTER SHEET
-           ========================================= */
+        /* CHARACTER SHEET */
 
         .character-sheet {
             width: 100%;
@@ -212,9 +212,80 @@
             transform: scale(1.01);
         }
 
-        /* =========================================
-           ABOUT ME
-           ========================================= */
+        /* CINEMATIC STUDIES */
+
+        .cinematic-studies {
+            padding-top: 35px;
+            padding-bottom: 85px;
+        }
+
+        .cinematic-studies .section-title {
+            margin-bottom: 14px;
+        }
+
+        .cinematic-studies h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+            margin-bottom: 15px;
+        }
+
+        .cinematic-intro {
+            max-width: 760px;
+            color: #aaa;
+            font-size: 0.98rem;
+            line-height: 1.75;
+            margin-bottom: 30px;
+        }
+
+        .cinematic-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px;
+            width: 100%;
+        }
+
+        .cinematic-item {
+            min-width: 0;
+        }
+
+        .cinematic-gif {
+            display: block;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 16 / 9;
+            object-fit: contain;
+            background: #090909;
+            border: 1px solid #29232f;
+            border-radius: 5px;
+            cursor: zoom-in;
+            transition: border-color 0.25s ease, transform 0.25s ease;
+        }
+
+        .cinematic-gif:hover {
+            border-color: #62536f;
+            transform: translateY(-2px);
+        }
+
+        .cinematic-caption {
+            margin-top: 13px;
+        }
+
+        .cinematic-caption h3 {
+            color: #eee;
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .cinematic-caption p {
+            color: #888;
+            font-size: 0.88rem;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        /* ABOUT ME */
 
         .about-section {
             max-width: 1200px;
@@ -267,9 +338,7 @@
             margin-bottom: 0;
         }
 
-        /* =========================================
-           IMAGE LIGHTBOX
-           ========================================= */
+        /* IMAGE LIGHTBOX */
 
         .lightbox {
             position: fixed;
@@ -385,9 +454,9 @@
             font-size: 2.5rem;
         }
 
-        /* Mobile */
-        @media (max-width: 700px) {
+        /* MOBILE */
 
+        @media (max-width: 700px) {
             nav {
                 padding: 22px 18px;
             }
@@ -469,7 +538,46 @@
                 height: auto;
             }
 
+            /* Mobile Cinematic Studies */
+
+            .cinematic-studies {
+                padding: 25px 10px 60px;
+            }
+
+            .cinematic-studies h2 {
+                font-size: 1.6rem;
+            }
+
+            .cinematic-intro {
+                font-size: 0.92rem;
+                margin-bottom: 22px;
+            }
+
+            .cinematic-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 10px;
+            }
+
+            .cinematic-gif {
+                border-radius: 3px;
+            }
+
+            .cinematic-caption {
+                margin-top: 9px;
+            }
+
+            .cinematic-caption h3 {
+                font-size: 0.88rem;
+                line-height: 1.4;
+            }
+
+            .cinematic-caption p {
+                font-size: 0.78rem;
+                line-height: 1.5;
+            }
+
             /* Mobile About Me */
+
             .about-section {
                 padding: 75px 18px 70px;
             }
@@ -501,6 +609,7 @@
             }
 
             /* Mobile Lightbox */
+
             .lightbox {
                 padding: 20px;
             }
@@ -539,6 +648,20 @@
                 font-size: 11px;
             }
         }
+
+        @media (max-width: 360px) {
+            .cinematic-grid {
+                gap: 7px;
+            }
+
+            .cinematic-caption h3 {
+                font-size: 0.8rem;
+            }
+
+            .cinematic-caption p {
+                font-size: 0.72rem;
+            }
+        }
     </style>
 </head>
 
@@ -554,7 +677,7 @@
     </nav>
 
     <section class="hero">
-        <p>STORYBOARD & PREVIS ARTIST</p>
+        <p>STORYBOARD &amp; PREVIS ARTIST</p>
 
         <h1>YOICHI</h1>
 
@@ -593,7 +716,12 @@
             <!-- Project 1 -->
             <div class="project-card">
                 <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/ieiZl8u1DtQ" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe
+                        src="https://www.youtube.com/embed/ieiZl8u1DtQ"
+                        title="Dialogue Animatic"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
                 </div>
 
                 <p>PROJECT 01</p>
@@ -615,7 +743,12 @@
             <!-- Project 2 -->
             <div class="project-card">
                 <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/9b2q1yJ4v94" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe
+                        src="https://www.youtube.com/embed/9b2q1yJ4v94"
+                        title="Action Animatic Full"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
                 </div>
 
                 <p>PROJECT 02</p>
@@ -645,7 +778,12 @@
             <!-- Project 3 -->
             <div class="project-card">
                 <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/M7VOglnAegw" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe
+                        src="https://www.youtube.com/embed/M7VOglnAegw"
+                        title="Chasing Sequence"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
                 </div>
 
                 <p>PROJECT 03</p>
@@ -661,7 +799,12 @@
             <!-- Project 4 -->
             <div class="project-card">
                 <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/goifU2V1VK8" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe
+                        src="https://www.youtube.com/embed/goifU2V1VK8"
+                        title="Fight Sequence"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
                 </div>
 
                 <p>PROJECT 04</p>
@@ -677,11 +820,16 @@
             <!-- Project 5 -->
             <div class="project-card">
                 <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/S2yZhuAxGLc" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe
+                        src="https://www.youtube.com/embed/S2yZhuAxGLc"
+                        title="Firearm and Finale"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
                 </div>
 
                 <p>PROJECT 05</p>
-                <h2>FIREARM & FINALE</h2>
+                <h2>FIREARM &amp; FINALE</h2>
 
                 <p><strong>STORYBOARD / ANIMATIC</strong></p>
 
@@ -760,14 +908,22 @@
 
                 <p>
                     The full lore archive is available here:
-                    <a href="https://yoicsecrec.github.io/kissndestroy/" target="_blank" style="color: #fff;">
+                    <a
+                        href="https://yoicsecrec.github.io/kissndestroy/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style="color: #fff;">
                         Kiss N Destroy — Lore Archive
                     </a>
                 </p>
 
                 <p>
                     The full Kiss N Destroy manga is available here:
-                    <a href="https://www.webtoons.com/en/canvas/kiss-n-destroy/list?title_no=1152980" target="_blank" style="color: #fff;">
+                    <a
+                        href="https://www.webtoons.com/en/canvas/kiss-n-destroy/list?title_no=1152980"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style="color: #fff;">
                         Webtoon
                     </a>
                 </p>
@@ -796,21 +952,67 @@
         </section>
     </main>
 
+    <!-- CINEMATIC STUDIES: independent short visual experiments -->
 
-    <!-- =========================================
-         ABOUT ME
-         ========================================= -->
+    <section class="cinematic-studies" id="cinematic-studies">
+        <p class="section-title">03 / ADDITIONAL WORK</p>
+
+        <h2>CINEMATIC STUDIES</h2>
+
+        <p class="cinematic-intro">
+            A couple of small visual experiments made with Clip Studio Paint
+            and DaVinci Resolve, exploring lighting effects and action within a shot.
+        </p>
+
+        <div class="cinematic-grid">
+
+            <!-- GIF 1: Police lights -->
+            <div class="cinematic-item">
+                <img
+                    class="cinematic-gif"
+                    src="gif1.gif"
+                    alt="Police lights flashing while the character remains still"
+                    loading="lazy">
+
+                <div class="cinematic-caption">
+                    <h3>Police Lights</h3>
+                    <p>
+                        A short visual study exploring flashing police lights
+                        around a static character.
+                    </p>
+                </div>
+            </div>
+
+            <!-- GIF 2: Moving car and gunfire -->
+            <div class="cinematic-item">
+                <img
+                    class="cinematic-gif"
+                    src="gif2.gif"
+                    alt="Side view of a moving car with a character firing a gun"
+                    loading="lazy">
+
+                <div class="cinematic-caption">
+                    <h3>Moving Car / Gunfire</h3>
+                    <p>
+                        A short action study combining vehicle movement
+                        and a character firing from the car.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ABOUT ME -->
 
     <section id="about" class="about-section">
-
         <div class="about-box">
-
             <p class="about-label">ABOUT ME</p>
 
             <h2 class="about-name">Yoichi</h2>
 
             <p class="about-text">
-                I’m a Storyboard & Previs Artist with a strong interest in visual storytelling.
+                I’m a Storyboard &amp; Previs Artist with a strong interest in visual storytelling.
                 I’ve been interested in drawing and visual storytelling since I was a kid,
                 and I’m still exploring it with the same curiosity and excitement.
             </p>
@@ -825,20 +1027,14 @@
                 I’m currently looking for work and internship opportunities in games, animation,
                 film, commercials and other visual production fields.
             </p>
-
         </div>
-
     </section>
 
-
-    <!-- =========================================
-         CONTACT
-         ========================================= -->
+    <!-- CONTACT -->
 
     <footer id="contact">
-
         <p>
-            AVAILABLE FOR STORYBOARD, ANIMATIC & VISUAL STORYTELLING WORK
+            AVAILABLE FOR STORYBOARD, ANIMATIC &amp; VISUAL STORYTELLING WORK
         </p>
 
         <h2>
@@ -853,17 +1049,17 @@
             <br>
 
             LINKEDIN:
-            <a href="https://www.linkedin.com/in/yoichi-rec-656601408/" target="_blank" style="color: #fff;">
+            <a
+                href="https://www.linkedin.com/in/yoichi-rec-656601408/"
+                target="_blank"
+                rel="noopener noreferrer"
+                style="color: #fff;">
                 linkedin.com/in/yoichi-rec-656601408
             </a>
         </p>
-
     </footer>
 
-
-    <!-- =========================================
-         IMAGE LIGHTBOX
-         ========================================= -->
+    <!-- IMAGE LIGHTBOX -->
 
     <div class="lightbox" id="lightbox" aria-hidden="true">
 
@@ -871,45 +1067,37 @@
             class="lightbox-close"
             id="lightboxClose"
             aria-label="Close image"
-            type="button"
-        >
-            &times;
+            type="button">
+            ×
         </button>
 
         <button
             class="lightbox-prev"
             id="lightboxPrev"
             aria-label="Previous image"
-            type="button"
-        >
-            &#8249;
+            type="button">
+            ‹
         </button>
 
         <img
             class="lightbox-image"
             id="lightboxImage"
             src=""
-            alt=""
-        >
+            alt="">
 
         <button
             class="lightbox-next"
             id="lightboxNext"
             aria-label="Next image"
-            type="button"
-        >
-            &#8250;
+            type="button">
+            ›
         </button>
 
         <div class="lightbox-counter" id="lightboxCounter"></div>
-
     </div>
 
-
     <script>
-        /* =========================================
-           IMAGE LIGHTBOX SCRIPT
-           ========================================= */
+        /* IMAGE LIGHTBOX SCRIPT */
 
         const lightbox = document.getElementById("lightbox");
         const lightboxImage = document.getElementById("lightboxImage");
@@ -919,17 +1107,15 @@
         const lightboxCounter = document.getElementById("lightboxCounter");
 
         const galleries = document.querySelectorAll(
-            ".image-grid, .character-sheet"
+            ".image-grid, .character-sheet, .cinematic-grid"
         );
 
         let currentGallery = [];
         let currentIndex = 0;
 
-
         /* Open selected image */
 
         function openLightbox(gallery, index) {
-
             currentGallery = Array.from(
                 gallery.querySelectorAll("img")
             );
@@ -944,11 +1130,9 @@
             document.body.style.overflow = "hidden";
         }
 
-
         /* Update displayed image */
 
         function updateLightbox() {
-
             if (!currentGallery.length) return;
 
             const image = currentGallery[currentIndex];
@@ -959,49 +1143,36 @@
             lightboxCounter.textContent =
                 `${currentIndex + 1} / ${currentGallery.length}`;
 
-
             if (currentGallery.length <= 1) {
-
                 lightboxPrev.style.display = "none";
                 lightboxNext.style.display = "none";
                 lightboxCounter.style.display = "none";
-
             } else {
-
                 lightboxPrev.style.display = "block";
                 lightboxNext.style.display = "block";
                 lightboxCounter.style.display = "block";
-
             }
         }
-
 
         /* Close lightbox */
 
         function closeLightbox() {
-
             lightbox.classList.remove("active");
             lightbox.setAttribute("aria-hidden", "true");
 
             document.body.style.overflow = "";
 
             setTimeout(() => {
-
                 if (!lightbox.classList.contains("active")) {
-
                     lightboxImage.src = "";
                     lightboxImage.alt = "";
-
                 }
-
             }, 200);
         }
-
 
         /* Previous image */
 
         function showPrevious() {
-
             if (!currentGallery.length) return;
 
             currentIndex--;
@@ -1013,11 +1184,9 @@
             updateLightbox();
         }
 
-
         /* Next image */
 
         function showNext() {
-
             if (!currentGallery.length) return;
 
             currentIndex++;
@@ -1029,76 +1198,50 @@
             updateLightbox();
         }
 
-
-        /* Add click events to all portfolio images */
+        /* Add click events to portfolio images and GIFs */
 
         galleries.forEach(gallery => {
-
             const images = gallery.querySelectorAll("img");
 
             images.forEach((image, index) => {
-
                 image.addEventListener("click", () => {
-
                     openLightbox(gallery, index);
-
                 });
-
             });
-
         });
-
 
         /* Close button */
 
-        lightboxClose.addEventListener("click", (event) => {
-
+        lightboxClose.addEventListener("click", event => {
             event.stopPropagation();
-
             closeLightbox();
-
         });
-
 
         /* Previous button */
 
-        lightboxPrev.addEventListener("click", (event) => {
-
+        lightboxPrev.addEventListener("click", event => {
             event.stopPropagation();
-
             showPrevious();
-
         });
-
 
         /* Next button */
 
-        lightboxNext.addEventListener("click", (event) => {
-
+        lightboxNext.addEventListener("click", event => {
             event.stopPropagation();
-
             showNext();
-
         });
-
 
         /* Clicking the dark background closes the lightbox */
 
-        lightbox.addEventListener("click", (event) => {
-
+        lightbox.addEventListener("click", event => {
             if (event.target === lightbox) {
-
                 closeLightbox();
-
             }
-
         });
-
 
         /* Keyboard controls */
 
-        document.addEventListener("keydown", (event) => {
-
+        document.addEventListener("keydown", event => {
             if (!lightbox.classList.contains("active")) {
                 return;
             }
@@ -1114,7 +1257,6 @@
             if (event.key === "ArrowRight") {
                 showNext();
             }
-
         });
     </script>
 
